@@ -1,0 +1,237 @@
+$small-wrapper: 1040px
+$medium-wrapper: 1190px
+$large-wrapper: 1480px
+$card-list-wrapper: 1456px
+$icon-size: 48px
+$card-size: 30%
+$trophey-size: 70px
+$color-violet: #4942F3
+
+.hay 
+    background-color: blue
+
+.mainContainer
+    padding: 60px 0 0
+    justify-content: center
+
+    @mixin title
+        font-weight: 700
+        max-width: 100%
+        color: #19184A
+
+    h1
+        @include title
+        font-size: 40px
+    h2 
+        @include title
+        font-size: calc(1.3rem + .6vw)
+        
+    p
+        color: rgba(25, 24, 74, 0.5)
+        line-height: 1.5
+        font-weight: 400
+        transform: scale(1, .97)
+
+    .hb-caption
+        color: #377dff
+        font-size: 12px
+        font-weight: 400
+        padding: 0.4375rem 0.9375rem
+        background: rgba(55, 125, 255, 0.1)
+        border-color: transparent
+        display: inline-block
+        line-height: 21px
+        border-radius: 20px
+        transition: all 0.2s ease-in-out
+        margin-bottom: 0.5rem !important
+        font-family: "Product Sans", sans-serif
+        letter-spacing: 0.6px
+
+.slide 
+    width: 100%
+    
+    &__HowItWork 
+        padding:  20px 50px 30px 50px
+    
+    &__OurServices 
+        background: linear-gradient(271.19deg, rgba(48, 125, 246, .05) 0%, rgba(20, 187, 191, .05) 100%), #FFFFFF
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding:  20px 50px 30px 50px
+        
+    
+@mixin content
+    margin: 0 auto
+    display: flex
+    align-items: center
+    width: 100%
+    box-sizing: border-box
+
+   
+    
+            
+
+
+.content
+
+    &__HowItWork
+        flex-wrap: wrap
+        justify-content: space-between
+        max-width: $small-wrapper
+        padding: 30px 0
+        @include content
+
+
+        .textContainer
+            text-align: left
+            max-width: 490px
+
+            h1
+                margin: 0 auto 10px auto
+                
+            p
+                margin: 0 0 40px 0
+        img
+            width: 520px
+            object-fit: cover
+            border-radius: 16px
+            border-bottom: 3px solid #637cf7
+
+        
+    &__OurServices
+        flex-direction: column
+        padding: 80px 0
+        @include content
+
+        .steps
+            margin-bottom: 70px
+
+        p
+            margin: 10px auto 40px auto
+            color: #19184A
+            max-width: 800px  
+            
+
+        .trophey
+            width: $trophey-size
+            height: $trophey-size
+            margin-bottom: 20px
+
+        .cardList
+            display: flex
+            flex-wrap: wrap
+            width: 100%
+            justify-content: space-between
+            gap: 20px
+
+            .icon
+                height: $icon-size
+                width: $icon-size
+
+            @mixin card
+                align-items: flex-start
+                flex-grow: 1
+                min-width: 200px
+                display: flex
+                justify-content: space-between
+                padding: 25px
+                background: #fff
+                box-shadow: 0 16px 32px rgba(0, 0, 0, 0.04)
+                border-radius: 24px
+                .arrow
+                    width: 25px
+
+
+            .cardItem
+                @include card
+                flex-basis: 27%
+                flex-direction: column
+                .arrow
+                    fill: #FFF
+                    padding-left: 10px
+                    transition: all ease .3s
+                    width: 35px
+                    height: 25px
+
+            .cardStepItem
+                
+                @include card
+                flex-basis: 200px
+                position: relative
+                .step 
+                    padding: 10px
+                    font-size: 14px
+                    color: #fff
+                    font-weight: 700
+                    height: 32px
+                    background: $color-violet
+                    border-radius: 20px
+                    line-height: 32px
+                    padding: 0 15px
+                    display: block
+                    width: fit-content
+                .arrow
+                    position: absolute
+                    right: -15px
+                    top: 50%
+                    fill: #4942F3
+                    
+
+            .wayButton 
+                background-color: #fff
+                font-size: 16px
+                color: #fff
+                display: inline-flex
+                align-items: center
+                font-weight: 700
+                padding: 13px 20px
+                justify-content: center
+                transition: all ease .3s
+                border-radius: 8px
+                border-top-left-radius: 8px
+                border-top-right-radius: 8px
+                border-bottom-right-radius: 8px
+                border-bottom-left-radius: 8px
+                background: linear-gradient(-45deg, #5a73ed 0, #3d57d5 100%)
+                position: relative
+                background-color: #637CF7
+                cursor: pointer
+
+                &:hover
+                    background: linear-gradient(90deg, #5a73ed 0, #3d57d5 100%)
+                    .arrow
+                        padding-left: 20px
+                        width: 25px
+
+    @media (min-width: 1560px) 
+
+        &__OurServices 
+            max-width: $large-wrapper
+
+        &__HowItWork 
+            max-width: $small-wrapper
+
+    @media (max-width: 1560px) 
+        &__OurServices
+            max-width: $medium-wrapper
+            padding: 50px
+
+        &__HowItWork
+            padding: 20px 0 30px 0
+        
+    @media (max-width: 1150px)
+        &__HowItWork
+            justify-content: center
+            img
+                width: 100% 
+            .textContainer
+                max-width: none
+                text-align: center
+        &__OurServices
+            padding: 10px
+
+        p
+            text-align: center
+
+
