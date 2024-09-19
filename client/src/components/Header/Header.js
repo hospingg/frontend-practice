@@ -45,14 +45,14 @@ class Header extends React.Component {
                 <li><Link to="/account" style={{ textDecoration: 'none' }}><span>My Account</span></Link></li>
                 <li>
                   <Link
-                    to="http:/www.google.com"
+                    to="#"
                     style={{ textDecoration: 'none' }}
                   >
                     <span>Messages</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="http:/www.google.com" style={{ textDecoration: 'none' }}><span>Affiliate Dashboard</span></Link>
+                  <Link to="#" style={{ textDecoration: 'none' }}><span>Affiliate Dashboard</span></Link>
                 </li>
                 <li><span onClick={this.logOut}>Logout</span></li>
               </ul>
